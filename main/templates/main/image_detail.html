@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container"> 
+    <div class="row"> 
+        <div class="col-md-8">
+    <div class="card">
+            <div class="card-heading">
+                <div class="placing">
+            <a href="{% url 'profile' %}"><img src="{{ object.profile.profile.profile_pic.url }}" alt="profile picture" class="rounded-circle custom-display border border-danger"></a>
+            <p class="ml-3">{{ image.profile.username }}</p>
+            {% if object.profile == user %}
+            <div class="float-right">
+                <a href="{% url 'image_update' object.id %}" class="btn btn-secondary btn-sm">Update</a>
+                <a href="{% url 'image_delete' object.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+            </div><hr>
+            <div  class="card-body">
+            <a href="{% url 'image_detail' image.id%}"><img src="{{ object.image.url }}" alt="{{ image.image_name }} image" class="display-images img-fluid"></a>
+            <p>{{ object.image_name }}: {{ object.image_caption }}</p>
+        </div>
+        <div class="card-footer">
+                {% if object.profile == user %}
+                <a href="{% url 'image_update' object.id %}" class="btn btn-secondary btn-sm">Update</a>
+                <a href="{% url 'image_delete' object.id %}" class="btn btn-danger btn-sm">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    {% if object.comment_set.all %}
+        {% for comment in object.comment_set.all %}
+            <p><a href="{% url 'single_profile' comment.user.profile.id %}"><img src="{{ comment.user.profile.profile_pic.url }}" alt="profile picture" class="rounded-circle custom-display border border-danger"></a><strong>{{ comment.user.username }}</strong>:  {{ comment.comment }}</p>
+        {% endfor %}
+    {% endif %}
+</div>
+</div> 
+</div>
+
+{% endblock %}
