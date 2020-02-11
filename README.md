@@ -78,6 +78,16 @@ localhost:8000/admin
 
 End with an example of getting some data out of the system or using it for a little demo
 
+## BDD
+
+| Behavior            | Input                         | Output                        | 
+| ------------------- | ----------------------------- | ----------------------------- |
+|Navigate to website | Click on a profile| User profile is displayed |
+| Post Image | Click on the post image icon| User redirected to the post image form where they can post the image and write a caption |
+| Search | Search users| Redirects you to user's profile page |
+| Comment | Click on the comment icon | Takes the user to the page where you can write and post a comment about the specific image|
+
+
 ## Running the tests
 
 Run the system test by typing the following commands
