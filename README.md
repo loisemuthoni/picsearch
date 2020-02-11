@@ -110,6 +110,9 @@ python3.7 manage.py tests
 
 - This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
+## Contact
+- Email: loisemburu01@gmail.com
+
 ## Acknowledgments
 
 * Moringa School for guidance
