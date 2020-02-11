@@ -1,4 +1,4 @@
-from django.urls import url,path
+from django.conf.urls import url
 from .views import (
     # ImageListView,
     ImageDetailView,
